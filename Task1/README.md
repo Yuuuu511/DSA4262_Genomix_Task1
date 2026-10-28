@@ -1,7 +1,6 @@
 # Task 1: m6A Prediction with XGBoost
 
 **Team:** Genomix  
-**Repository:** [DSA4262_Genomix](https://github.com/Yuuuu511/DSA4262_Genomix)
 
 This project predicts site-level m6A modification scores from m6Anet-processed direct RNA sequencing signals.
 
@@ -119,8 +118,8 @@ conda activate m6a_task1
 ### 1.4 Download the repository and install dependencies
 
 ```bash
-git clone --branch main https://github.com/Yuuuu511/DSA4262_Genomix.git
-cd DSA4262_Genomix/Task1
+git clone --branch main https://github.com/Yuuuu511/DSA4262_Genomix_Task1.git
+cd DSA4262_Genomix_Task1/Task1
 
 python -m pip install -r requirements.txt
 python -m pip check
@@ -145,7 +144,7 @@ The direct dependencies are pinned in [requirements.txt](requirements.txt):
 | joblib | 1.4.2 |
 | SciPy | 1.15.2 |
 
-**Run the remaining commands from `DSA4262_Genomix/Task1/`, with `m6a_task1` activated.**
+**Run the remaining commands from `DSA4262_Genomix_Task1/Task1/`, with `m6a_task1` activated.**
 
 ## 2. Run the example
 
@@ -339,7 +338,7 @@ Download the datasets and labels from the **DSA4262 Team Project materials on Ca
 Place the dataset folders alongside `Task1/`:
 
 ```text
-DSA4262_Genomix/
+DSA4262_Genomix_Task1/
 ├── data0/
 │   ├── dataset0.json.gz
 │   └── data.info.labelled
@@ -778,7 +777,7 @@ Third-party software and datasets retain their own terms.
 
 When referring to this project, cite:
 
-> Genomix team (2026). *DSA4262_Genomix: m6A prediction from direct RNA sequencing*. [GitHub repository](https://github.com/Yuuuu511/DSA4262_Genomix).
+> Genomix team (2026). *DSA4262_Genomix_Task1: m6A prediction from direct RNA sequencing*. [GitHub repository](https://github.com/Yuuuu511/DSA4262_Genomix_Task1).
 
 Include the exact commit hash used. No DOI or formal release identifier has been assigned.
 
