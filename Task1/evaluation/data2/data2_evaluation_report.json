@@ -1,0 +1,20 @@
+{
+  "label_rule": "ge0.5",
+  "label_rule_status": "label >= 0.5 is 1; label < 0.5 is 0.",
+  "n_sites": 1323,
+  "n_original_labels_equal_0_5": 189,
+  "positive_sites": 945,
+  "negative_sites": 378,
+  "baseline_evaluated": true,
+  "notes": [
+    "Data2 is not used for training or tuning.",
+    "Fractional labels use threshold of 0.5.",
+    "Prediction scores remain continuous; no score threshold is applied.",
+    "Baseline uses the saved data0+data1 pipeline without refitting.",
+    "Pretrained m6Anet training overlap is unknown; comparisons use shared sites."
+  ],
+  "baseline_model": "/Users/cindy.yue/Desktop/DSA4262/DSA4262_Genomix/Task1/artifacts/baseline.joblib",
+  "baseline_data": "/Users/cindy.yue/Desktop/DSA4262/Group_Project/data2/dataset2.json.gz",
+  "m6anet_common_sites": 1323,
+  "m6anet_missing_sites": 0
+}

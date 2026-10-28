@@ -1,0 +1,12 @@
+{
+  "method": "LogisticRegression C=1, class_weight=balanced, max_iter=2000, seed=4262",
+  "inputs": "First nine signal-mean features only; scaling fitted inside training pipeline.",
+  "selection": "Fixed simple baseline; no candidate tuning.",
+  "training_scope": "data0+data1 train+validation; same gene split as XGBoost",
+  "model_sha256": "50dce1ca32ddc3df07c611db8df4e543e77fd226f564fcfbc591ef93b7dacf19",
+  "notes": [
+    "Validation metrics computed before train+validation refit.",
+    "Analytic XGBoost weight correction is not applied to this logistic baseline.",
+    "Neither baseline nor XGBoost probabilities are empirically calibrated."
+  ]
+}

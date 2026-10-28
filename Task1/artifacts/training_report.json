@@ -1,0 +1,154 @@
+{
+  "selected": {
+    "max_depth": 3,
+    "positive_weight": 1,
+    "boosting_rounds": 912,
+    "selection_score": 0.6628758535422449,
+    "n_sites": 40113,
+    "positive_rate": 0.052925485503452746,
+    "roc_auc": 0.884494159345054,
+    "pr_auc": 0.4412575477394357,
+    "average_precision": 0.4415384660488891
+  },
+  "candidates": [
+    {
+      "max_depth": 3,
+      "positive_weight": 1,
+      "boosting_rounds": 912,
+      "selection_score": 0.6628758535422449,
+      "n_sites": 40113,
+      "positive_rate": 0.052925485503452746,
+      "roc_auc": 0.884494159345054,
+      "pr_auc": 0.4412575477394357,
+      "average_precision": 0.4415384660488891
+    },
+    {
+      "max_depth": 5,
+      "positive_weight": 1,
+      "boosting_rounds": 410,
+      "selection_score": 0.6627590668662765,
+      "n_sites": 40113,
+      "positive_rate": 0.052925485503452746,
+      "roc_auc": 0.8846245392439713,
+      "pr_auc": 0.4408935944885817,
+      "average_precision": 0.44120117647969714
+    },
+    {
+      "max_depth": 3,
+      "positive_weight": 4,
+      "boosting_rounds": 720,
+      "selection_score": 0.6586174579335866,
+      "n_sites": 40113,
+      "positive_rate": 0.052925485503452746,
+      "roc_auc": 0.8839662233547588,
+      "pr_auc": 0.43326869251241446,
+      "average_precision": 0.43358465053159057
+    },
+    {
+      "max_depth": 5,
+      "positive_weight": 4,
+      "boosting_rounds": 631,
+      "selection_score": 0.6605855476619701,
+      "n_sites": 40113,
+      "positive_rate": 0.052925485503452746,
+      "roc_auc": 0.8822469643634062,
+      "pr_auc": 0.43892413096053395,
+      "average_precision": 0.4391589423195784
+    }
+  ],
+  "parameters": {
+    "max_depth": 3,
+    "scale_pos_weight": 1,
+    "learning_rate": 0.05,
+    "n_estimators": 912,
+    "min_child_weight": 15,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 10,
+    "reg_alpha": 0.1,
+    "tree_method": "hist",
+    "n_jobs": 2,
+    "random_state": 4262,
+    "eval_metric": "aucpr"
+  },
+  "training_scope": "data0+data1 train+validation only",
+  "selection_rule": "(combined validation ROC-AUC + combined validation trapezoidal PR-AUC)/2",
+  "manifest": "splits/gene_split.csv",
+  "feature_hash": "ab1a5e6c0fa3e6a2153c71f1566b7910ea6856d1381b625b190b058e24e7eb51",
+  "model_sha256": "c37d23f69f80ea7a3a8f366c5ccac155a198ba4dacf48b4de0eea370fa7a4f4d",
+  "label_coverage": [
+    {
+      "source_dataset": "data0",
+      "label_sites": 121838,
+      "retained_manifest_sites": 121838,
+      "label_sites_outside_manifest": 0
+    },
+    {
+      "source_dataset": "data1",
+      "label_sites": 90810,
+      "retained_manifest_sites": 75673,
+      "label_sites_outside_manifest": 15137
+    }
+  ],
+  "split_counts": [
+    {
+      "source_dataset": "data0",
+      "split": "test",
+      "n_sites": 23832
+    },
+    {
+      "source_dataset": "data0",
+      "split": "train",
+      "n_sites": 73233
+    },
+    {
+      "source_dataset": "data0",
+      "split": "validation",
+      "n_sites": 24773
+    },
+    {
+      "source_dataset": "data1",
+      "split": "test",
+      "n_sites": 15187
+    },
+    {
+      "source_dataset": "data1",
+      "split": "train",
+      "n_sites": 45146
+    },
+    {
+      "source_dataset": "data1",
+      "split": "validation",
+      "n_sites": 15340
+    }
+  ],
+  "input_paths": {
+    "data0": "/Users/cindy.yue/Desktop/DSA4262/Group_Project/data0/dataset0.json.gz",
+    "data1": "/Users/cindy.yue/Desktop/DSA4262/Group_Project/data1/dataset1.json.gz",
+    "labels0": "/Users/cindy.yue/Desktop/DSA4262/Group_Project/data0/data.info.labelled",
+    "labels1": "/Users/cindy.yue/Desktop/DSA4262/Group_Project/data1/data.info"
+  },
+  "script_sha256": "481f056a39cea77c61216dac8c5e7a0d6469d5281164386f27c7c7bebd36c31e",
+  "versions": {
+    "xgboost": "2.1.4",
+    "sklearn": "1.6.1",
+    "numpy": "2.2.3"
+  },
+  "notes": [
+    "Test excluded from all feature extraction, fitting and selection.",
+    "Input labels, including test identities, checked against manifest only; test not used for fitting/selection.",
+    "Validation used for early stopping (aucpr) and combined configuration selection.",
+    "PR-AUC is trapezoidal area; AP is reported separately.",
+    "Combined metrics weight each source/site observation once; inspect per-source validation too.",
+    "Unmapped/excluded data1 sites are not added to the existing manifest.",
+    "Neither data2 nor the four new unlabelled datasets are used.",
+    "Model is NOT refitted on test genes.",
+    "Existing data0-only model was tuned using data0 validation only: not a controlled training-source ablation.",
+    "Original test has been inspected previously; final reporting is exploratory."
+  ],
+  "original_model_sha256": "4fe04349a99fa548a462aab2475fc2140f9e90beffa19b836eea94b0d295d24c",
+  "original_full_manifest_sha256": "7f8d71060e47ba2fafa571a45be4e193ddb5ebb2843cc3d0f8922a1bcd64c18b",
+  "manifest_sha256": "967834449084369faecb7d9052e528426270a0c990caf053c48c0ccc8f284dc5",
+  "membership_sha256": "af843f5ce32994c3f74e19a902a11b8aec8318d0ccf8494d4ec0762856b2b667",
+  "packaging_note": "Label-bearing manifest removed from model bundle; original fitted estimator and feature implementation unchanged."
+}
